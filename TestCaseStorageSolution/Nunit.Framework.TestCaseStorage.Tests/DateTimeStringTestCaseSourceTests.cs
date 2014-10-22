@@ -15,4 +15,17 @@ namespace Nunit.Framework.TestCaseStorage.Tests
             Assert.AreEqual(32, iterDateTime.Count());
         }
     }
+
+    public class SimpleTestClass
+    {
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void SimpleTestCase(string parametr)
+        {
+            Assert.IsTrue(string.IsNullOrWhiteSpace(parametr));
+        }
+
+        
+    }
 }
